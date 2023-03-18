@@ -1,4 +1,5 @@
 import heapq
+import pprint 
 
 def bellman_ford(graph, source):
     distance = {node: float('inf') for node in graph}
@@ -63,5 +64,11 @@ graph = {
     'E': [('A', 2), ('B', -1)],
 }
 
+
+
 shortest_paths = johnson(graph)
-print(shortest_paths)
+print("graph: ")
+pprint.pprint(graph, indent=2)
+print("shortest_paths: ")
+pprint.pprint(shortest_paths)
+input()

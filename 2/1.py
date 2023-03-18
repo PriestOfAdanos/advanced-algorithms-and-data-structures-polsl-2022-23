@@ -24,4 +24,8 @@ train_labels = [0, 0, 1, 1]
 test_data = [[1.5, 1.5], [3.5, 3.5]]
 
 predicted_labels = nearest_neighbor_algorithm(train_data, train_labels, test_data)
-print(predicted_labels)  # Output: [0, 1]
+print(f"train_data : {train_data}")
+print(f"train_labels: {train_labels}")
+print(f"test_data: {test_data}")
+print(f"predicted_labels: {predicted_labels}")  # Output: [0, 1]
+input()

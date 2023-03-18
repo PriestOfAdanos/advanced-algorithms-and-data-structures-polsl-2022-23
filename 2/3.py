@@ -1,3 +1,6 @@
+import pprint
+
+
 def find(parent, node):
     if parent[node] == node:
         return node
@@ -53,5 +56,13 @@ graph = {
 }
 
 print("Minimum Spanning Tree using Kruskal's Algorithm:")
+
+
+pprint.pprint(graph)
+
+print("Edges:")
+
 for edge in kruskal(graph):
     print(edge)
+
+input()
