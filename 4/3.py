@@ -1,5 +1,6 @@
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
 
 def plot_pca(X, y):
     pca = PCA(n_components=2)
@@ -10,5 +11,8 @@ def plot_pca(X, y):
     plt.ylabel("Second Principal Component")
     plt.title("PCA of Iris Dataset")
     plt.show()
+
+iris = load_iris()
+X, y = iris.data, iris.target
 
 plot_pca(X, y)
