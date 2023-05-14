@@ -23,7 +23,12 @@ def ant_algorithm(func, n, num_ants=50, num_iterations=100, alpha=1, beta=5, rho
             possible_moves = [move for move in possible_moves if move[0] >= 0 and move[1] >= 0 and move[0] < 100 and move[1] < 100]
             pheromone_values = [grid[move[0], move[1]] for move in possible_moves]
             total = sum(pheromone_values)
-            probabilities = [pheromone / total for pheromone in pheromone_values]
+
+            if total == 0:  # If all pheromone values are zero
+                probabilities = [1 / len(possible_moves) for _ in possible_moves]  # Assign equal probabilities
+            else:
+                probabilities = [pheromone / total for pheromone in pheromone_values]
+            
             ant.position = possible_moves[np.random.choice(len(possible_moves), p=probabilities)]
             ant.value = func(ant.position / 10 - 5)
 
