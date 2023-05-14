@@ -17,8 +17,9 @@ class Bat:
 
 def bat_algorithm(func, n, num_bats=30, num_iterations=100, alpha=0.9, gamma=0.9):
     bats = [Bat(n) for _ in range(num_bats)]
-    best_bat = None
-    best_value = float('inf')
+    best_bat = bats[0]  # Initialize best_bat as the first bat
+    best_bat.value = func(best_bat.position)  # Calculate initial best value
+    best_value = best_bat.value
 
     for _ in range(num_iterations):
         for bat in bats:
